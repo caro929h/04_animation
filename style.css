@@ -1,0 +1,453 @@
+body {
+  margin: 0;
+}
+
+a {
+  font-family: "Escoffier Capitaux", serif;
+  font-size: 2vw;
+  text-decoration: none;
+  font-weight: 700;
+  color: #d3e7ea;
+}
+
+#screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+#game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+#game_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(svg/spilskærm.svg);
+  background-size: cover;
+}
+
+#middelground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(svg/forgrund.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+
+/********* game_elements **********/
+
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#game_ui {
+  pointer-events: none;
+}
+
+#makrel_container {
+  position: absolute;
+  aspect-ratio: 2.1/2;
+  width: 8%;
+}
+
+#makrel_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(svg/Makrel.svg);
+  background-size: cover;
+}
+
+#mink_container {
+  position: absolute;
+  aspect-ratio: 2.5/2;
+  width: 9%;
+}
+#mink_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(svg/Mink.svg);
+  background-size: cover;
+}
+
+#mink_container2 {
+  position: absolute;
+  aspect-ratio: 2.5/2;
+  width: 9%;
+}
+
+#mink_sprite2 {
+  width: 100%;
+  height: 100%;
+  background-image: url(svg/Mink.svg);
+  background-size: cover;
+}
+
+#makrel_container2 {
+  position: absolute;
+  aspect-ratio: 2.1/2;
+  width: 8%;
+}
+
+#makrel_sprite2 {
+  width: 100%;
+  height: 100%;
+  background-image: url(svg/Makrel.svg);
+  background-size: cover;
+}
+
+/* Game ui */
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* point */
+
+#score_board {
+  width: 8%;
+  aspect-ratio: 8/7;
+  position: absolute;
+  top: 6%;
+  left: 85%;
+}
+
+#energy_board {
+  position: absolute;
+  top: 5%;
+  left: 4%;
+  display: flex;
+  gap: 0.5vw;
+  justify-content: center;
+}
+
+#energy_board img {
+  width: 4vw;
+}
+
+.forsvind {
+  animation-name: forsvind_kf;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+@keyframes forsvind_kf {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.frys {
+  animation-play-state: paused;
+}
+.fald {
+  animation-name: fald_kf;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+@keyframes fald_kf {
+  0% {
+    transform: translateY(-875%);
+  }
+  100% {
+    transform: translateY(835%);
+  }
+}
+.pos1 {
+  left: 10%;
+}
+.pos2 {
+  left: 19%;
+}
+.pos3 {
+  left: 28%;
+}
+.pos4 {
+  left: 39%;
+}
+.pos5 {
+  left: 57%;
+}
+.pos6 {
+  left: 67%;
+}
+.pos7 {
+  left: 79%;
+}
+.pos8 {
+  left: 95;
+}
+
+.delay1 {
+  animation-delay: 3s;
+}
+
+.delay2 {
+  animation-delay: 7s;
+}
+
+.delay3 {
+  animation-delay: 9s;
+}
+
+.speed1 {
+  animation-duration: 1.9s;
+}
+
+.speed2 {
+  animation-duration: 2.3s;
+}
+
+.speed3 {
+  animation-duration: 2.9s;
+}
+
+.speed4 {
+  animation-duration: 3.4s;
+}
+
+.speed5 {
+  animation-duration: 2.6s;
+}
+
+/* tid */
+
+#time_container {
+  position: absolute;
+  top: 1vw;
+  left: 35vw;
+  width: 40vw;
+  height: 4.7vw;
+  background-image: url(svg/timer_bg.svg);
+  background-size: cover;
+}
+
+#time_container2 {
+  position: absolute;
+  top: 2.5vw;
+  left: 37vw;
+  width: 2.2vw;
+  height: 3.3vw;
+  background-image: url(svg/Tid.svg);
+  background-size: cover;
+}
+
+/*
+#time_sprite {
+  width: 1.8vw;
+  height: 2.6vw;
+  background-image: url(svg/Tid.svg);
+  background-size: cover;
+}*/
+
+.shrink {
+  animation-name: time_kf;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes time_kf {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(22.5vw);
+  }
+}
+/*
+#time_container {
+  position: absolute;
+  width: 20%;
+  aspect-ratio: 30/6;
+  border: 2px solid black;
+  background-color: rgb(200, 200, 200);
+  top: 4%;
+  left: 35%;
+  z-index: 21;
+}
+#time_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: right;
+  z-index: 21;
+}
+
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 20s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  z-index: 21;
+}
+
+@keyframes shrink_kf {
+  0% {
+    transform: scaleX(1);
+    background-color: limegreen;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scaleX(0);
+    background-color: red;
+  }
+}
+*/
+
+#start {
+  position: absolute;
+  background-image: url(svg/Startskærm.svg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#start_knap {
+  position: absolute;
+  top: 38vw;
+  left: 6vw;
+  background-image: url(svg/start\ knap.svg);
+  background-size: cover;
+  width: 21vw;
+  height: 6vw;
+
+  animation-name: puls_kf;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: alternate;
+}
+
+@keyframes puls_kf {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#regel_knap {
+  position: absolute;
+  top: 43.5vw;
+  left: 7.5vw;
+  background-image: url(svg/regel\ knap.svg);
+  background-size: cover;
+  width: 17vw;
+  height: 5vw;
+
+  animation-name: puls_kf;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: alternate;
+}
+
+#regler {
+  position: absolute;
+  background-image: url(svg/regelskærm.svg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#tilbage_knap {
+  position: absolute;
+  top: 42vw;
+  left: 32vw;
+  background-image: url(svg/tilbage_knap.svg);
+  background-size: cover;
+  width: 30vw;
+  height: 10vw;
+}
+
+#level_complete {
+  position: absolute;
+  background-image: url(svg/level_completed.svg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#level_complete_points {
+  position: absolute;
+  top: 34.5vw;
+  left: 49.8vw;
+  color: black;
+  font-size: 3vw;
+}
+
+#spil_igen {
+  position: absolute;
+  top: 38vw;
+  left: 37.5vw;
+  background-image: url(svg/spil_igen.svg);
+  background-size: cover;
+  width: 25vw;
+  height: 6vw;
+
+  animation-name: puls_kf;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: alternate;
+}
+
+#game_over {
+  position: absolute;
+  background-image: url(svg/game_over.svg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#game_over_points {
+  position: absolute;
+  top: 34.7vw;
+  left: 50.2vw;
+  color: black;
+  font-size: 3vw;
+}
+
+.skjul {
+  display: none;
+}

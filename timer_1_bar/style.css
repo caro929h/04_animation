@@ -1,0 +1,42 @@
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 2rem;
+  color: firebrick;
+}
+
+#time_container {
+  position: absolute;
+  width: 6%;
+  aspect-ratio: 6/30;
+  border: 2px solid black;
+  background-color: rgb(200, 200, 200);
+}
+
+#time_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center bottom;
+}
+
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+  0% {
+    transform: scaleY(1);
+    background-color: limegreen;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scaleY(0);
+    background-color: red;
+  }
+}
